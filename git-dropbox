@@ -36,10 +36,10 @@ init ()
 	REPO_NAME=$(basename "$REPO_ROOT")
 	BACKUP_PATH="$DROPBOX/git/$REPO_NAME"
 	
-	if [ ! -d $BACKUP_PATH ]; then
-		mkdir -p $BACKUP_PATH
+	if [ ! -d "$BACKUP_PATH" ]; then
+		mkdir -p "$BACKUP_PATH"
 		(
-			pushd $BACKUP_PATH
+			pushd "$BACKUP_PATH"
 			git init --bare
 			popd
 		) > /dev/null
